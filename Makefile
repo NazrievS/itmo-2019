@@ -13,6 +13,7 @@ typecheck:
 	poetry run sh bin/typecheck.sh
 
 .PHONY: package
+
 package:
 	poetry check
 	poetry run pip check
