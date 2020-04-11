@@ -7,27 +7,27 @@ from cli import mk, rm, since # noqa I001
 
 
 def test_ls_execution(ls_fixture):
-    """ls command test."""
+    """Ls command test."""
     assert ls(ls_fixture[0]) == ls_fixture[1]
 
 
 def test_mk_execution(mk_fixture):
-    """mk command test."""
+    """Mk command test."""
     assert mk(mk_fixture[0]) == mk_fixture[1]
 
 
 def test_rm_execution(rm_fixture):
-    """rm command test."""
+    """Rm command test."""
     assert rm(rm_fixture[0]) == rm_fixture[1]
 
 
 def test_contains_execution(contains_fixture):
-    """contains command test."""
+    """Contains command test."""
     assert contains(contains_fixture[0]) == contains_fixture[1]
 
 
 def test_since_execution(since_fixture):
-    """since command test."""
+    """Since command test."""
     assert since(
         since_fixture[0],
         since_fixture[1],
