@@ -2,33 +2,33 @@
 
 import subprocess   # noqa: S404,I001
 
-from cli import contains, ls    # noqa I001
-from cli import mk, rm, since # noqa I001
+from cli import contains_execution, ls_execution    # noqa I001
+from cli import mk_execution, rm_execution, since_execution # noqa I001
 
 
 def test_ls_execution(ls_fixture):
-    """Ls command test."""
-    assert ls(ls_fixture[0]) == ls_fixture[1]
+    """Tests for ls command."""
+    assert ls_execution(ls_fixture[0]) == ls_fixture[1]
 
 
 def test_mk_execution(mk_fixture):
-    """Mk command test."""
-    assert mk(mk_fixture[0]) == mk_fixture[1]
+    """Tests for mk command."""
+    assert mk_execution(mk_fixture[0]) == mk_fixture[1]
 
 
 def test_rm_execution(rm_fixture):
-    """Rm command test."""
-    assert rm(rm_fixture[0]) == rm_fixture[1]
+    """Tests for rm command."""
+    assert rm_execution(rm_fixture[0]) == rm_fixture[1]
 
 
 def test_contains_execution(contains_fixture):
-    """Contains command test."""
-    assert contains(contains_fixture[0]) == contains_fixture[1]
+    """Tests for contains command."""
+    assert contains_execution(contains_fixture[0]) == contains_fixture[1]
 
 
 def test_since_execution(since_fixture):
-    """Since command test."""
-    assert since(
+    """Tests for since command."""
+    assert since_execution(
         since_fixture[0],
         since_fixture[1],
     ) == since_fixture[2]

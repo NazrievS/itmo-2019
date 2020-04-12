@@ -5,8 +5,8 @@ from datetime import datetime
 import os   # noqa I001
 
 
-def ls(directory=None):
-    """Ls command execution."""
+def ls_execution(directory=None):
+    """Ls command execution function."""
     dirs_and_files = []
     if directory is None:
         directory = os.getcwd()
@@ -19,8 +19,8 @@ def ls(directory=None):
     return dirs_and_files
 
 
-def mk(file_name):
-    """Mk command execution."""
+def mk_execution(file_name):
+    """Mk command execution function."""
     try:    # noqa: WPS229
         if os.path.isfile(file_name):
             return False
@@ -32,8 +32,8 @@ def mk(file_name):
         return False
 
 
-def rm(file_name):
-    """Rm command execution."""
+def rm_execution(file_name):
+    """Rm command execution function."""
     if os.path.isfile(file_name):
         os.remove(file_name)
     else:
@@ -41,15 +41,15 @@ def rm(file_name):
     return True
 
 
-def contains(file_name):
-    """Contains command execution."""
+def contains_execution(file_name):
+    """Contains command execution function."""
     if os.path.isfile(file_name):
         return True
     return False
 
 
-def since(given_datetime, directory=None):    # noqa: C901
-    """Since command execution."""
+def since_execution(given_datetime, directory=None):    # noqa: C901
+    """Since command execution function."""
     if directory is None:
         directory = os.getcwd()
     try:    # noqa: WPS229
@@ -82,11 +82,11 @@ if __name__ == '__main__':
     caller = command.command[0]
     args = None
     command_list = {
-        'ls': ls,
-        'mk': mk,
-        'rm': rm,
-        'contains': contains,
-        'since': since,
+        'ls': ls_execution,
+        'mk': mk_execution,
+        'rm': rm_execution,
+        'contains': contains_execution,
+        'since': since_execution,
     }
     if caller in command_list:
         if len(command.command) > 1:
