@@ -17,6 +17,5 @@ package:
 	poetry check
 	poetry run pip check
 
-
 .PHONY: test
 test: lint typecheck unit package
